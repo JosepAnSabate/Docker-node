@@ -6,5 +6,18 @@ services:
       - "3000:3000"
     environment: 
       - PORT=3000
+    
+  mongo:
+    image: mongo
+    environment: 
+        - MONGO_INITDB_ROOT_USERNAME=josep.andreu%40e-campus.uab.cat
+        - MONGO_INITDB_ROOT_PASSWORD=celdoni95
+    volumes: 
+      - mongo-db:/data/db 
+
+volumes: 
+  mongo-db:
+
+
 
  # docker-compose up -d for using docker-compose for buiding the image
