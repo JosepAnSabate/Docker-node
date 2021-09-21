@@ -10,4 +10,11 @@ services:
       - /app/node_modules
     environment: 
       - NODE_ENV=developement 
+      - MONGO_USER=josep.andreu%40e-campus.uab.cat
+      - MONGO_PASSWORD=celdoni
     command: npm run dev 
+  mongo:
+    environment: 
+        - MONGO_INITDB_ROOT_USERNAME=josep.andreu%40e-campus.uab.cat
+        - MONGO_INITDB_ROOT_PASSWORD=celdoni
+        

@@ -6,12 +6,14 @@ services:
       - "3000:3000"
     environment: 
       - PORT=3000
+    depends_on: 
+      - mongo
     
   mongo:
     image: mongo
     environment: 
         - MONGO_INITDB_ROOT_USERNAME=josep.andreu%40e-campus.uab.cat
-        - MONGO_INITDB_ROOT_PASSWORD=celdoni95
+        - MONGO_INITDB_ROOT_PASSWORD=celdoni
     volumes: 
       - mongo-db:/data/db 
 
