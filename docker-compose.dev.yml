@@ -1,5 +1,8 @@
 version: "3"
 services: 
+  nginx: 
+    ports: 
+        - "3000:80"
   node-app:
     build: 
       context: .
@@ -12,9 +15,14 @@ services:
       - NODE_ENV=developement 
       - MONGO_USER=josep.andreu%40e-campus.uab.cat
       - MONGO_PASSWORD=celdoni
+      - SESSION_SECRET=secret
+
     command: npm run dev 
   mongo:
     environment: 
         - MONGO_INITDB_ROOT_USERNAME=josep.andreu%40e-campus.uab.cat
         - MONGO_INITDB_ROOT_PASSWORD=celdoni
+      
+
+
         
